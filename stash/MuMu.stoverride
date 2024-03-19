@@ -1,0 +1,18 @@
+name: MuMu 模拟器
+desc: 延长 MuMu 模拟器会员试用期
+
+http:
+  mitm:
+    - '*.mumu.163.com'
+  script:
+    - match: ^https?:\/\/api-pro\.mumu\.163\.com\/api\/v1\/user\/info
+      name: mumu
+      type: response
+      require-body: true
+      max-size: -1
+      binary-mode: false
+
+script-providers:
+  mumu:
+    url: https://raw.githubusercontent.com/zjns/config/master/js/mumu.js
+    interval: 86400
