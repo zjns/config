@@ -1,0 +1,8 @@
+#!name=MuMu 模拟器
+#!desc=延长 MuMu 模拟器会员试用期
+
+[MITM]
+hostname = %APPEND% api-pro.mumu.163.com
+
+[Script]
+mumu = type=http-response,pattern=^https?://api-pro\.mumu\.163\.com/api/v1/user/info,requires-body=1,max-size=0,engine=jsc,script-path=https://raw.githubusercontent.com/zjns/config/master/js/mumu.js
